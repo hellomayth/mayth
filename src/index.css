@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-beige: #F5F2ED;
+  --color-ink: #1A1A1A;
+  --color-baby-blue: #D6E6F2;
+  --color-baby-pink: #F7D9D9;
+  --color-baby-green: #D9F7E6;
+  --color-baby-yellow: #F7F3D9;
+  --color-baby-orange: #F7E6D9;
+  
+  --color-baby-blue-dark: #4A90E2;
+  --color-baby-pink-dark: #E24A4A;
+  --color-baby-green-dark: #27AE60;
+  --color-baby-yellow-dark: #D4AC0D;
+  --color-baby-orange-dark: #D35400;
+  
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  body {
+    @apply bg-beige text-ink antialiased selection:bg-ink selection:text-beige;
+    cursor: none;
+  }
+  
+  a, button, .cursor-pointer {
+    cursor: none;
+  }
+}
+
+.markdown-body {
+  @apply max-w-none leading-relaxed;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
