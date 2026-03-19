@@ -281,10 +281,6 @@ const PORTFOLIO_ITEMS = [
         <p>
           I am incredibly proud of what we have achieved together. The technical challenges were immense, but the personal bonds we formed were even greater. To my colleagues, my mentors, and my stakeholders: thank you for being part of this incredible chapter.
         </p>
-
-        <p className="font-bold italic">
-          To wrap it up: I love Airbus, I love the C&P Train, and I absolutely love my team.
-        </p>
       </div>
     )
   },
