@@ -1140,6 +1140,45 @@ const StaggeredText = ({ text, className = "" }: { text: string, className?: str
   );
 };
 
+const PortfolioCard = ({ item, i, isDetailed = false }: { item: any, i: number, isDetailed?: boolean }) => {
+  const [isHovered, setIsHovered] = useState(false);
+  
+  return (
+    <FadeInWhenVisible delay={i * 0.1} className="h-full">
+      <motion.div 
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
+        whileHover={{ y: isDetailed ? -10 : -15, scale: 1.02 }}
+        className={`${item.color} ${isDetailed ? 'rounded-3xl' : 'rounded-[2.5rem]'} overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col`}
+      >
+        <Link to={`/portfolio/${item.id}`} className="block h-full cursor-pointer">
+          <div className={isDetailed ? "aspect-video overflow-hidden" : "aspect-[16/10] overflow-hidden shrink-0"}>
+            <img 
+              src={item.img} 
+              alt={item.title} 
+              style={{ 
+                filter: isHovered ? 'grayscale(0%) brightness(1.1)' : 'grayscale(100%) brightness(1)',
+                transform: isHovered ? 'scale(1.05)' : 'scale(1)'
+              }}
+              className="w-full h-full object-cover transition-all duration-700" 
+              referrerPolicy="no-referrer" 
+            />
+          </div>
+          <div className={isDetailed ? "p-6 flex justify-between items-center" : "p-8 flex justify-between items-start flex-1"}>
+            <div className={isDetailed ? "" : "flex-1 mr-4"}>
+              <h3 className={isDetailed ? "font-bold text-xl" : "font-bold text-2xl mb-1"}>{item.title}</h3>
+              <p className={isDetailed ? "text-sm opacity-60" : isDetailed ? "text-sm opacity-60" : "text-sm opacity-60 uppercase tracking-widest"}>{item.category}</p>
+            </div>
+            <div className={isDetailed ? "w-10 h-10 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white transition-colors" : "w-12 h-12 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white group-hover:rotate-45 transition-all duration-500 shrink-0"}>
+              <ArrowUpRight size={isDetailed ? 18 : 20} />
+            </div>
+          </div>
+        </Link>
+      </motion.div>
+    </FadeInWhenVisible>
+  );
+};
+
 const Home = () => {
   const [isBlogStoryExpanded, setIsBlogStoryExpanded] = React.useState(false);
   const { scrollY } = useScroll();
@@ -1364,34 +1403,7 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {PORTFOLIO_ITEMS.slice(0, 4).map((item, i) => (
             <div key={i} className="flex flex-col">
-              <FadeInWhenVisible delay={i * 0.1} className="h-full">
-                <motion.div 
-                  whileHover={{ y: -15, scale: 1.02 }}
-                  className={`${item.color} rounded-[2.5rem] overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col`}
-                >
-                  <Link to={`/portfolio/${item.id}`} className="block h-full cursor-pointer">
-                    <div className="aspect-[16/10] overflow-hidden shrink-0">
-                      <motion.img 
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 1.2 }}
-                        src={item.img} 
-                        alt={item.title} 
-                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                        referrerPolicy="no-referrer" 
-                      />
-                    </div>
-                    <div className="p-8 flex justify-between items-start flex-1">
-                      <div className="flex-1 mr-4">
-                        <h3 className="font-bold text-2xl mb-1">{item.title}</h3>
-                        <p className="text-sm opacity-60 uppercase tracking-widest">{item.category}</p>
-                      </div>
-                      <div className="w-12 h-12 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white group-hover:rotate-45 transition-all duration-500 shrink-0">
-                        <ArrowUpRight size={20} />
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              </FadeInWhenVisible>
+              <PortfolioCard item={item} i={i} />
             </div>
           ))}
         </div>
@@ -1529,26 +1541,9 @@ const Portfolio = () => {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {PORTFOLIO_ITEMS.map((item, i) => (
-          <motion.div 
-            key={i}
-            whileHover={{ y: -10 }}
-            className={`${item.color} rounded-3xl overflow-hidden group shadow-lg`}
-          >
-            <Link to={`/portfolio/${item.id}`} className="block h-full cursor-pointer">
-              <div className="aspect-video overflow-hidden">
-                <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
-              </div>
-              <div className="p-6 flex justify-between items-center">
-                <div>
-                  <h3 className="font-bold text-xl">{item.title}</h3>
-                  <p className="text-sm opacity-60">{item.category}</p>
-                </div>
-                <div className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white transition-colors">
-                  <ArrowUpRight size={18} />
-                </div>
-              </div>
-            </Link>
-          </motion.div>
+          <div key={i}>
+            <PortfolioCard item={item} i={i} isDetailed={true} />
+          </div>
         ))}
       </div>
     </div>
