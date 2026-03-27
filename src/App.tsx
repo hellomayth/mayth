@@ -4,7 +4,7 @@
  */
 
 import React, { useEffect, useState } from 'react';
-import { Linkedin, Mail, ExternalLink, ArrowLeft, BookOpen, Award, GraduationCap, Trophy, Star, ArrowUpRight, ChefHat, Plane, ShoppingBag } from 'lucide-react';
+import { Linkedin, Mail, ExternalLink, ArrowLeft, BookOpen, Award, GraduationCap, Trophy, Star, ArrowUpRight, ChefHat, Plane, ShoppingBag, Fish, Palette, Flower2, Scissors } from 'lucide-react';
 import { motion, AnimatePresence, useScroll, useSpring, useMotionValue, useTransform } from 'motion/react';
 import { BrowserRouter, Routes, Route, Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 
@@ -287,7 +287,7 @@ const PORTFOLIO_ITEMS = [
   { 
     id: 'logistics-reconciliation',
     title: 'Logistics Reconciliation System', 
-    category: 'Tech Project Management', 
+    category: 'Logistics & Fintech', 
     color: 'bg-baby-yellow', 
     img: '/vehical delivery.png',
     excerpt: 'From Vehicle Delivery to Financial Truth: Lessons from Building a Logistics Reconciliation System.',
@@ -477,21 +477,308 @@ const PORTFOLIO_ITEMS = [
     )
   },
   { 
-    id: 'placeholder-item',
-    title: 'Digital Transformation: From Paper to Seamless Online Integration', 
+    id: 'insurance-microservices-disruption',
+    title: 'Beyond the Paperwork: Surprising Ways Microservices are Disrupting the Insurance Sales Journey', 
     category: 'Insurance Tech', 
     color: 'bg-baby-pink', 
-    img: 'https://picsum.photos/seed/placeholder/800/600',
-    excerpt: 'A new project is in the works. Stay tuned for updates!',
-    date: 'Coming Soon',
+    img: '/e-Insurance Sales Platform.png',
+    excerpt: 'How microservices and real-time orchestration transformed a paper-strewn insurance sales journey into a seamless digital experience.',
+    date: 'Mar 25, 2026',
+    content: (
+      <div className="space-y-8 text-lg leading-relaxed">
+
+        <p className="text-xl font-medium italic opacity-80">
+          In the traditional insurance world, the journey to a customer’s "yes" was historically a paper-strewn obstacle course. For decades, agents and customers were bogged down by manual calculations, physical forms, and weeks of administrative lag. This friction did not just annoy customers; it killed sales momentum. In any enterprise environment, we know that integration is often harder than building the new system itself, and the "paperwork nightmare" was a symptom of fragmented legacy architecture.
+        </p>
+
+        <h3 className="text-3xl font-bold">The Story</h3>
+        <p>
+          In 2019, the launch of the InsurDigital system for an insurance company in Southeast Asia countries flipped this script. To the agent, it appears as a sleek, intuitive web app experience that moves from discovery to policy issuance in a single sitting. To a solutions architect, however, it is a masterclass in microservice-driven transformation. Behind every simple "submit" button lies a massive, intelligent ecosystem that has replaced legacy lag with real-time orchestration.
+        </p>
+        <p>
+          The goal of the InsurDigital platform was to digitize the entire sales journey end-to-end. Instead of paperwork moving between departments, the entire process would happen digitally, all from a mobile app:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>The agent meets the customer</li>
+          <li>Performs Financial Needs Analysis (FNA)</li>
+          <li>Recommends products</li>
+          <li>Generates proposals and illustrations</li>
+          <li>Collects customer information</li>
+          <li>Uploads documents</li>
+          <li>Collects e-signatures</li>
+          <li>Submits the application</li>
+          <li>Sends it to underwriting</li>
+          <li>And finally issues the policy</li>
+        </ul>
+
+        <div className="space-y-2">
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-ink/5">
+            <img 
+              src="/End to End Flow from Proposal to Policy.png" 
+              alt="End to End Flow from Proposal to Policy" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <p className="text-sm text-center opacity-50 italic">
+            End to End Flow from Proposal to Policy
+          </p>
+        </div>
+
+        <p>
+          From an agent’s perspective, the flow was straightforward: just a simple about 10-step flow. But from a system perspective, each step triggered multiple services, integrations, and data flows across different systems.
+        </p>
+
+        <div className="space-y-2">
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-ink/5">
+            <img 
+              src="/5-Layer Insurance Architecture Ecosystem.png" 
+              alt="5-Layer Insurance Architecture Ecosystem" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <p className="text-sm text-center opacity-50 italic">
+            High-Level System Architecture
+          </p>
+        </div>
+        <p>
+          The system was not just one application — it was an entire ecosystem.
+        </p>
+
+        <hr className="border-ink/10" />
+
+         <h3 className="text-3xl font-bold">The Secret Sauce</h3>
+
+        <h3 className="text-2xl font-bold">1. The Power of Three: The Decoupled "Sales Trinity" in the First Layer.</h3>
+        <p>
+          The brilliance of this modern architecture lies in the strategic decoupling of the sales process into three core functional modules: MnR (Meet and Refine), Propose, and Apply. This modularity ensures system stability by isolating heavy calculation logic and state management from the user interface.
+        </p>
+        <ul className="list-disc pl-6 space-y-4">
+          <li>
+            <strong>MnR (Meet and Refine):</strong> This is the discovery engine. It captures customer data to perform a Financial Needs Analysis (FNA) and generates personalized product recommendations. Crucially, its architectural output includes a customer shortfall calculation, which identifies gaps in the customer’s financial portfolio to drive the recommendation engine.
+          </li>
+          <li>
+            <strong>Propose:</strong> This module is the "heavy lifter." It handles complex plan settings, nine distinct plan codes, and a web of interdependent riders—including Accidental Dismemberment (ADD), Critical Illness (CI), Health Care (HC), Term, and Medicash.
+          </li>
+          <li>
+            <strong>Apply:</strong> Once a proposal is finalized and "Converted," the system shifts to legal and financial execution, managing application forms, agreements, disclosures, and payments.
+          </li>
+        </ul>
+        <p>
+          Isolating these modules is essential for performance. The Propose module, for instance, must handle extreme logic complexity where "selecting Rider A must dynamically update the eligibility and calculations for Rider B." By decoupling these functions, the system processes complex interdependencies without compromising the agent’s primary workflow.
+        </p>
+        
+        <div className="space-y-2">
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-ink/5">
+            <img 
+              src="/Microservices Architecture and Business Modules.png" 
+              alt="Microservices Architecture and Business Modules" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <p className="text-sm text-center opacity-50 italic">
+            Microservices Architecture and Business Modules
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold">2. The "Logic of Silence": Why You Don’t See Every Question</h3>
+        <p>
+          To achieve high rates of Straight Through Processing (STP), the system utilizes an intelligent logic layer known as the "Rule Book." This ensures that the insurance agent and the customer are never overwhelmed by irrelevant information through a process called "Regressive Questioning."
+        </p>
+        <p>
+          Instead of a static list of questions, the interface utilizes an XML tool to manage complex logic trees. From a developer's perspective, this XML-driven approach is vital as it makes the logic trees easier to visualize and update as regulations change. This allows the system to render a dynamic UI across eight specific steps, using "if-this-then-that" triggers to show questions only when they become relevant.
+        </p>
+        <p className="font-bold italic">
+          This is not just a set of forms, but a dynamic UI driven by Regressive Questioning.
+        </p>
+        <p>
+          By using single and multi-filters to render fields based on previous answers, the "Rule Book" acts as a gatekeeper. This ensures every application is "clean" before it ever reaches the home office, preventing information overload and drastically reducing submission errors.
+        </p>
+
+        <div className="space-y-2">
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-lg border border-ink/5">
+            <img 
+              src="/Regressive Questioning Logic Ensures a Pristine Data Payload.png" 
+              alt="Regressive Questioning Logic Ensures a Pristine Data Payload" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <p className="text-sm text-center opacity-50 italic">
+            Regressive Questioning Logic Ensures a Pristine Data Payload
+          </p>
+        </div>
+
+        <h3 className="text-2xl font-bold">3. The 30-Day Clock: Why Some Proposals are Built to Die</h3>
+        <p>
+          In the Southeast Asia market, the system enforces a specific, counter-intuitive business rule: the 30-day proposal lifecycle (depending on specific country). Proposals in the system have a limited lifespan; they can exist in "Draft" or "Final" status, but if no action is taken within 30 days of creation, they "Expire."
+        </p>
+        <p>
+          This technical rule is a deliberate architectural choice designed to create sales momentum. It ensures that the financial data, risk profiling, and premium calculations remain current. The only way to "save" this progress and move into the legal execution phase is to transition the proposal to a "Converted" status, which triggers the migration of data into the Apply module.
+        </p>
+        <blockquote className="border-l-4 border-baby-pink pl-4 italic">
+          "If a proposal isn't 'Converted' within its 30-day window, it expires—a technical rule that reflects the real-world need for sales momentum."
+        </blockquote>
+        <p>
+          By forcing an expiration on drafts, the system guarantees that all applications are based on fresh, accurate information, preventing the "stale data" issues that plague legacy batch-processing systems.
+        </p>
+
+        <h3 className="text-2xl font-bold">4. The "BFF" Pattern: The Architect's Secret to Speed</h3>
+        <p>
+          Behind the mobile interface sits a high-traffic hub powered by the InsurDigital BFF (Backend for Frontend) Service. Orchestrated through an API Gateway (such as Apigee or Zuul), the BFF pattern is vital for mobile performance in the Southeast Asia market. It aggregates calls from a massive ecosystem of microservices into a single, optimized response, which is essential for preventing latency issues over local mobile networks.
+        </p>
+        <p>
+          The backend ecosystem includes several specialized hubs:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li><strong>The Brain:</strong> A dedicated <strong>Product Engine</strong> handles core logic through three sub-services: <strong>Validation</strong>, <strong>Premium Calculation</strong>, and <strong>Illustration</strong>.</li>
+          <li><strong>The Ecosystem:</strong> Integration with <strong>Salesforce</strong> (agent profiles), <strong>Adobe Analytics</strong>, <strong>Vidyard</strong> (video hosting), and a <strong>Centralized Document Management System (DMS)</strong> for secure document storage.</li>
+          <li><strong>Data Strategy:</strong> While primary enterprise data resides in the <strong>"Golden Org"</strong> and <strong>Unified Insurance Data Model (UIDM)</strong> databases, the architecture utilizes a dedicated <strong>InsurDigital Data Service (Cloud SQL)</strong>. This stores specific sales data and transient states that the core legacy systems are not designed to handle or permit.</li>
+        </ul>
+        <p>
+          This Centralized Data Strategy ensures that the enterprise maintains a single source of truth for customer identity, while the Cloud SQL sidecar allows the InsurDigital app to remain agile and capture data that legacy core systems would otherwise reject.
+        </p>
+        <p>
+          <strong>External Integration:</strong> The "Apply" module connects directly to government systems and third-party gateways like <strong>Payment gateways</strong> (for example <strong>Napas, CyberSource, Stripe</strong>, or else) and <strong>DMS</strong> for secure document repository management.
+        </p>
+
+        <h3 className="text-2xl font-bold">5. Trust at Warp Speed: Achieving "Straight Through Processing" (STP)</h3>
+        <p>
+          The final stage of the journey is where technology meets rigorous legal demands. To maintain a truly paperless environment, the system integrates security services that enable a "no-human-intervention" workflow, transforming a process that once took days into one that takes minutes.
+        </p>
+        <p>
+          This transition to STP is powered by:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li><strong>OCR-VNID:</strong> Identity verification via an uploading button (uploading a photo of the national ID), which uses Optical Recognition to automate data entry.</li>
+          <li><strong>OTP (One-Time Password):</strong> Secure, legally binding signatures for authentication.</li>
+          <li><strong>Signed Doc Services:</strong> These services generate secure, tamper-proof PDFs to produce official e-contracts (e-policies) that are synced and authenticated in real-time.</li>
+        </ul>
+        <p>
+          In this ecosystem, the definition of "Converted" is more than a flag; it is a "metaphor for the digital transformation of the insurance industry."
+        </p>
+
+        <hr className="border-ink/10" />
+
+        <h3 className="text-3xl font-bold">The Future of the "Converted" Proposal</h3>
+        <p>
+          The shift from paper-based workflows to an intelligent, microservice-driven engine has turned a convoluted funnel into a streamlined pathway. This transformation proves that a simple front-end experience is only possible when supported by a complex, highly integrated backend that handles the heavy lifting of payload optimization and cross-system orchestration. By leveraging decoupled modules and real-time validation, insurers can finally provide a frictionless journey from the first handshake to the final signature.
+        </p>
+
+        <hr className="border-ink/10" />
+
+        <h3 className="text-3xl font-bold">Challenges During the Project</h3>
+        <ul className="list-decimal pl-6 space-y-4">
+          <li><strong>Complex Business Rules:</strong> Insurance products have many rules, parameters, riders, and validations.</li>
+          <li><strong>Integration with Legacy Systems:</strong> Many internal systems were old and not designed for modern APIs.</li>
+          <li><strong>Document and Signature Flow:</strong> Handling document generation, upload, storage, and signature securely.</li>
+          <li><strong>Proposal Calculation Performance:</strong> Premium and illustration calculations could be heavy and needed optimization.</li>
+          <li><strong>Data Synchronization:</strong> Mobile app had to sync data properly with backend systems.</li>
+          <li><strong>Security and Compliance:</strong> Insurance and financial data require high security and compliance standards.</li>
+          <li><strong>Multi-System Coordination:</strong> A single user action could trigger multiple services and systems.</li>
+        </ul>
+
+        <hr className="border-ink/10" />
+
+        <h3 className="text-3xl font-bold">Lessons Learned</h3>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Microservices help with scalability and modularity, but they increase integration complexity.</li>
+          <li>Integration projects are often more complex than building new applications.</li>
+          <li>Insurance systems are highly rule-driven and require strong domain knowledge.</li>
+          <li>Prioritizing 'Security-by-Design' as a non-negotiable foundation for financial data.</li>
+          <li>Document management and data mapping are critical in enterprise systems.</li>
+          <li>Good API design is very important when many systems communicate with each other.</li>
+          <li>Communication between business teams and engineering teams is crucial.</li>
+          <li>End-to-end data flow understanding is more important than understanding only one service.</li>
+        </ul>
+        <p>
+          Most importantly, I learned that digital transformation is not just about building a new app — it is about integrating and transforming an entire ecosystem.
+        </p>
+
+        <hr className="border-ink/10" />
+
+        <h3 className="text-3xl font-bold">Conclusion</h3>
+        <p>
+          It was not just a mobile app — it was a large-scale enterprise platform connecting many systems together. Working on this project gave me a deeper understanding of enterprise architecture, system integration, and how complex business processes are transformed into digital platforms. And most importantly, it showed me that behind every simple mobile app is usually a very complicated system architecture.
+        </p>
+
+        <p className="text-sm opacity-50 italic pt-8 border-t border-ink/10">
+          Disclaimer: The architectures and workflows discussed in this article are generalized frameworks intended for educational and knowledge-sharing purposes. All proprietary identifiers, system names, and specific business logics have been abstracted to ensure compliance with professional confidentiality and data protection standards.
+        </p>
+      </div>
+    )
+  },
+  { 
+    id: 'building-tents-vs-skyscraper',
+    title: 'Building "Tents" vs. Skyscraper Ambitions', 
+    category: 'Digital Strategy', 
+    color: 'bg-baby-green', 
+    img: '/Building a Tent.png',
+    excerpt: 'A few years ago, my sister shared a beautiful metaphor with me. She spoke about the act of building "tents"—temporary shelters designed for a moment, a night, or a season.',
+    date: 'Mar 25, 2026',
     content: (
       <div className="space-y-8 text-lg leading-relaxed">
         <p className="text-xl font-medium italic opacity-80">
-          Leading the digital shift in insurance: An end-to-end microservices-based platform featuring decoupled modules, real-time payments, and e-signatures.
+          A few months ago, my sister shared a beautiful metaphor with me. She spoke about the act of building "tents"—temporary shelters designed for a moment, a night, or a season.
+        </p>
+
+        <p>
+          This story struck a chord with me. It took me back to my early days as a fresh graduate entering the IT industry. Back then, my world was a whirlwind of small, fast-paced projects. We weren't building skyscrapers; we were master tent-builders.
+        </p>
+
+        <h3 className="text-3xl font-bold">The Charm of the Digital "Tent"</h3>
+        <p>
+          In the digital landscape, these "tents" are the landing pages, microsites, and simple corporate websites. They aren't heavy applications; they don't require massive infrastructure or complex logic.
         </p>
         <p>
-          Something exciting is coming soon. 
-          I am currently in the middle of something. So, this space will be updated with more details once I have time.
+          There is a certain beauty in building them. They provide immediate shelter for a marketing campaign, allowing users to "camp out" and enjoy the brand’s scenery without the need for a permanent monument. They are creative and fast.
+        </p>
+
+        <h3 className="text-3xl font-bold">The Hidden Cost of Temporary Living</h3>
+        <p>
+          However, living in a world of tents has its drawbacks. In the Vietnamese agency scene, "tent-building" can sometimes foster a "hit-and-run" mindset. The pace is often frantic, leaving little room for "inner peace"—that sense of inner peace and stability.
+        </p>
+        <p>
+          For a Project Manager or a Developer, the learning curve eventually plateaus. After years of building one minigame, one social post, or one small TVC after another, the excitement fades. You realize you are just repeating the same small structures in different fields, with no room to grow into a true architect of complex systems.
+        </p>
+
+        <h3 className="text-3xl font-bold">The Secret to a "High-End Tent"</h3>
+        <p>
+          That said, not all tents are flimsy. Some are built so well they stand the test of time.
+        </p>
+        <p>
+          Take Nippon Paint Vietnam, for example. Back in 2018, we worked on their website. The success of that project came down to a "fair" client who knew exactly what they wanted. They provided a brief so meticulous it spanned over a hundred slides, detailing every tone, mood, and minimal design element. Because the foundation was so clear, that "tent" is still standing and serving them well today.
+        </p>
+
+        <h3 className="text-3xl font-bold">Lessons from the Trenches: The "Plain Vanilla" Crisis</h3>
+        <p>
+          Project management is rarely about the smooth days; it’s about how you handle the storms. I remember a project for Plain Vanilla—a bakery in Singapore.
+        </p>
+        <p>
+          During a final check, we discovered a duplicate order bug. I tasked a junior developer with the fix, but I underestimated the complexity. At 8:00 PM, the junior accidentally wiped the production data—orders and payments were gone.
+        </p>
+        <p>
+          Our senior developer was away, hiking on a mountain with no Wi-Fi. We had to track him down and get him to a café with a connection in the middle of the night. By sunrise, the data was restored, and the client’s staff started their day without ever knowing how close we came to disaster.
+        </p>
+        <p>
+          That night taught me two things:
+        </p>
+        <ul className="list-disc pl-6 space-y-2">
+          <li>Never underestimate the risk of a "simple" fix.</li>
+          <li>Always have a contingency plan for your human talent.</li>
+        </ul>
+        <p>
+          (And yes, the next time I’m in Singapore, I’ll be ordering a cupcake from Plain Vanilla—I’ve earned that bite!)
+        </p>
+
+        <h3 className="text-3xl font-bold">The Inevitable Evolution</h3>
+        <p>
+          There is a season for everything. Building tents is an incredible way to learn agility and the art of the quick win. But there comes a point where the space inside a tent feels too small for your ambitions.
+        </p>
+        <p>
+          If you find yourself tired of pitching temporary tents, it might be time to move toward the sites where grander architectures are built. Transitioning from short-term shelters to enduring structures is not just a career move; it is an inevitable evolution for any professional seeking mastery.
         </p>
       </div>
     )
@@ -499,6 +786,201 @@ const PORTFOLIO_ITEMS = [
 ];
 
 const BLOG_POSTS = [
+  { 
+    id: 'breaking-the-barriers-comfort-zone',
+    date: 'Mar 27, 2026', 
+    title: 'Breaking the Barriers: Stepping Out of Your Comfort Zone', 
+    img: '/Comfort Zone.png',
+    excerpt: 'Have you ever found yourself stuck in a loop? You read the books, you attend the seminars, and you know exactly what needs to change. Yet, when the moment to act arrives, you find yourself paralyzed.', 
+    category: 'Growth', 
+    color: 'text-baby-orange',
+    content: (
+      <div className="space-y-8 text-lg leading-relaxed">
+        <p className="text-xl font-medium italic opacity-80">
+          Have you ever found yourself stuck in a loop? You read the books, you attend the seminars, and you know exactly what needs to change. Yet, when the moment to act arrives, you find yourself paralyzed.
+        </p>
+
+        <p>
+          Is it a lack of motivation? Or is it those deep-rooted thoughts whispering that you should just keep doing what you’ve always done? Sometimes it’s shyness, sometimes it’s a lack of "why," but most often, it’s simply fear — a fear that quietly sits deep inside us, and we don’t want to face it.
+        </p>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">The "Wow" Moment: Discovering the Comfort Zone</h2>
+          <p>
+            Years ago, before I officially entered the workforce, I had the privilege of attending a soft skills class at my university. It was led by Mr. Bui Do Nguyen, the founder of Wow Art and a former trainer at Dale Carnegie Vietnam. Having a mentor with such a stellar background gave me the confidence to fully embrace the lessons.
+          </p>
+          <p>
+            It was there that I was first introduced to the concept of the <strong>"Comfort Zone."</strong> I still remember the "wow" feeling during those practical exercises. It wasn’t just a theory; it was as if a new horizon had opened up inside me. That knowledge has stayed with me throughout my career, acting as a compass. It pushed me to dive into new experiences and seize opportunities that I would have otherwise let slip away. Instead of staying stagnant, I chose to slowly pushed myself further every day instead of just staying where I felt safe.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">Seeing the Reflection in Others</h2>
+          <p>
+            I sometimes observe my team members—many of whom come from technical backgrounds. They are brilliant, yet often hesitant to speak up or contribute ideas during meetings.
+          </p>
+          <p>
+            Looking at them, I see a reflection of my younger self.
+          </p>
+          <p>
+            I used to be exactly like that — quiet, hesitant, afraid of saying something wrong, afraid of being judged, afraid of stepping out of my comfort zone.
+          </p>
+          <p>
+            I realized that they don't lack talent; they are simply held back by the boundaries of their own comfort zones. This is why I decided to share these lessons with them. I want to provide that same "wow" spark—a lever to help them push through their hesitation.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">Why We Must Venture Out</h2>
+          <p>
+            Stepping out of your comfort zone isn't just about doing things differently; it's about:
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>Conquering Fear:</strong> Facing the shadows that keep us playing small.</li>
+            <li><strong>Growth:</strong> Realizing that "better" only happens when we try "different."</li>
+            <li><strong>Extraordinary Results:</strong> Achieving things we once thought were impossible.</li>
+          </ul>
+          <p>
+            To be honest, I was a bit lazy when preparing the material back then, so I borrowed a Comfort Zone slide that I found online and just modified it a little bit. Here is the slide I used:
+          </p>
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-ink/5 bg-ink/5 mt-6">
+            <iframe 
+              src="https://docs.google.com/presentation/d/12-pHkNu9yiRm9szE5vXGGKTytRSC3-gQCW-lU1mhvNI/embed?start=false&loop=false&delayms=3000" 
+              frameBorder="0" 
+              width="100%" 
+              height="100%" 
+              allowFullScreen={true}
+            ></iframe>
+          </div>
+          <p className="text-sm opacity-50 italic">
+            If the slides don't load, you can also view them <a href="https://docs.google.com/presentation/d/12-pHkNu9yiRm9szE5vXGGKTytRSC3-gQCW-lU1mhvNI/edit" target="_blank" rel="noopener noreferrer" className="text-baby-blue hover:underline">here</a>.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">Final Thoughts</h2>
+          <p>
+            Looking back, the Comfort Zone lesson was not something complicated or technical. But sometimes, the simplest ideas change us the most.
+          </p>
+          <p>
+            Life doesn’t grow inside the comfort zone. Confidence doesn’t come before action — it comes after we do something scary and realize we survived.
+          </p>
+          <p>
+            Sometimes I remind myself: <em>What is one small thing I can do differently?</em>
+          </p>
+          <p>
+            The magic happens right outside that circle of familiarity. Don’t let fear dictate our boundaries. Be brave, be curious, and dare to conquer the unknown. We might just surprise ourself with what we are capable of achieving.
+          </p>
+        </section>
+      </div>
+    )
+  },
+  { 
+    id: 'communication-survival-skill',
+    date: 'Mar 26, 2026', 
+    title: 'Communication Is Not a Soft Skill. It’s a Survival Skill.', 
+    img: '/Communication.png',
+    excerpt: 'We’ve all heard it before. From our university days to the peak of our careers, everyone hammers home the same point: "Communication is vital."', 
+    category: 'Work', 
+    color: 'text-baby-blue',
+    content: (
+      <div className="space-y-8 text-lg leading-relaxed">
+        <p className="text-xl font-medium italic opacity-80">
+          We’ve all heard it before. From our university days to the peak of our careers, everyone hammers home the same point: "Communication is vital." But after a decade in the industry, I had to stop and ask myself—is it really that important, or is it just a corporate cliché?
+        </p>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">The Education Gap: Logic vs. Soft Skills</h2>
+          <p>
+            In economic and business majors, communication is a core pillar of the curriculum. However, in the world of Engineering and IT, the story is different. With a limited number of credits and a heavy focus on complex technical subjects, soft skills often take a backseat.
+          </p>
+          <p>
+            Perhaps that’s why, in the Vietnamese IT landscape, we often encounter the stereotype of the "dry" or "robotic" developer—brilliant at logic, but hesitant or blunt in conversation. Interestingly, I’ve noticed a shift with <strong>Gen Z</strong>. Compared to the 8x and 9x generations, younger tech talent seems to have a much more natural grasp of these interpersonal dynamics. They seem more confident in expressing ideas, asking questions, and giving opinions. That’s a very good sign.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">Small Words, Big Friction</h2>
+          <p>
+            Sometimes, it’s the smallest things that cause the biggest headaches. In an office environment, failing to navigate cultural nuances can lead to unnecessary tension.
+          </p>
+          <p>
+            Take pronouns, for example. In Vietnam, using <strong>“mày – tao”</strong> might feel like "peak friendship" to one person, but to another, it feels disrespectful or patronizing. We may have no bad intention at all, but if the other person feels hurt, uncomfortable, or disrespected, then the communication has already failed. When we don't communicate with empathy, these "minor" interactions build walls between teammates.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">The Lonely Tech Lead</h2>
+          <p>
+            I once saw a situation that made me think. There was a Tech Lead who are technically gifted. He carried the project on his back, helped junior developers a lot, worked day and night to ensure delivery. You’d think their team would adore him, right?
+          </p>
+          <p>Not for this case, it’s the opposite.</p>
+          <p>
+            There is a team member sometimes feel resentful because the leader hasn't mastered the art of feedback. Statements like <em>"Why is this design so ugly?"</em> or <em>"I could do this in two hours, why did it take you all day?"</em> are like heat-seeking missiles.
+          </p>
+          <p>
+            Effective feedback should be <strong>objective, not personal.</strong> It should focus on the feature, not the person’s worth. Perhaps he was technically right. Perhaps he just wanted the product to be better. Perhaps he didn’t mean anything personal. But the way he said it <strong>made people feel stupid, pressured, and discouraged.</strong> Ask yourself: Is my goal to improve the product, or to make my colleague feel small? Your words must align with your true purpose.
+          </p>
+          <p>
+            On the flip side, the team member also need <strong>empathy</strong>. Instead of holding grudges over blunt words, look at the effort your Lead puts in to help you. We should strive to look at the good in others and treat them with that in mind. See harsh feedback as a bucket of water thrown at you: it contains water, sand, and <strong>grains of gold</strong>.
+          </p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li><strong>The sand</strong> (harsh words) hurts, and if you "rub your eyes" with it by taking it personally, you only hurt yourself more.</li>
+            <li><strong>The water</strong> (harmless parts) will eventually dry.</li>
+            <li><strong>The gold</strong> is the invaluable insight you need to catch.</li>
+          </ul>
+          <p>
+            When sand gets in your eyes, don't rub them—it only causes more scratches and pain. Instead, let the water dry, let the sand fall away, and focus entirely on finding those <strong>precious grains of gold</strong>.
+          </p>
+          <p>
+            By focusing on the core of the feedback to improve ourselves, we grow. That is how we move forward.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">Closing the Gap: My Approach</h2>
+          <p>
+            When I see these "red flags" or awkward friction points within my team, I don't just ignore them. I treat them as a "bug" in our system that needs a patch.
+          </p>
+          <p>
+            I developed a communication training session for my team. While it provides general knowledge rather than solving every specific conflict, my hope is that it fills the "soft skill holes" in our workflow. It’s about helping everyone see the <strong>Big Picture</strong>, encouraging them not to "take it personally," and teaching them how to communicate for the sake of the collective goal.
+          </p>
+          <blockquote className="border-l-4 border-baby-blue pl-6 py-2 italic bg-baby-blue/5 rounded-r-xl">
+            <p className="font-bold mb-2">Resource Share:</p>
+            <p>
+              I’ve linked my training slides below. A heads-up: they are quite long! I’ve kept the original documentation intact because I didn't want to lose the depth of the content. When I have more time, I’ll work on making them more "snackable" without losing the core message.
+            </p>
+          </blockquote>
+          <div className="aspect-video w-full rounded-2xl overflow-hidden shadow-2xl border border-ink/5 bg-ink/5 mt-6">
+            <iframe 
+              src="https://docs.google.com/presentation/d/1L8FXXp7LWV8qEnFiQtyvCK9_Co2suDfjVfei7Kz4ebA/embed?start=false&loop=false&delayms=3000" 
+              frameBorder="0" 
+              width="100%" 
+              height="100%" 
+              allowFullScreen={true}
+            ></iframe>
+          </div>
+          <p className="text-sm opacity-50 italic">
+            If the slides don't load, you can also view them <a href="https://docs.google.com/presentation/d/1L8FXXp7LWV8qEnFiQtyvCK9_Co2suDfjVfei7Kz4ebA/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-baby-blue hover:underline">here</a>.
+          </p>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-3xl font-bold">The "Unicorn" Professional</h2>
+          <p>
+            Technical skills may get you a job. But communication skills will decide how far you go.
+          </p>
+          <p>
+            On a final note, I have met many individuals who are the "total package"—brilliant technically and masters of communication.
+          </p>
+          <p>
+            These people are almost always at the top of their game, holding the most prestigious roles and earning the highest salaries. Despite their success, they are never arrogant. They are genuine, humble, and always ready to help. They don't just write great code; they build great culture.
+          </p>
+          <p>That, to me, is the ultimate goal.</p>
+        </section>
+      </div>
+    )
+  },
   { 
     id: 'deal-with-conflict',
     date: 'Mar 17, 2026', 
@@ -606,6 +1088,10 @@ const LITTLE_JOYS_ITEMS = [
   { icon: Plane, title: 'Traveling', desc: 'Exploring new destinations and cultures.', color: 'text-baby-pink-dark', bgColor: 'bg-baby-pink/30' },
   { icon: ShoppingBag, title: 'Shopping', desc: 'Finding unique pieces and local treasures.', color: 'text-baby-yellow-dark', bgColor: 'bg-baby-yellow/30' },
   { icon: BookOpen, title: 'Reading', desc: 'Diving into philosophy and modern fiction.', color: 'text-baby-green-dark', bgColor: 'bg-baby-green/30' },
+  { icon: Fish, title: 'Fishing', desc: 'Finding peace and patience by the water.', color: 'text-baby-blue-dark', bgColor: 'bg-baby-blue/30' },
+  { icon: Palette, title: 'Painting', desc: 'Expressing creativity through colors and strokes.', color: 'text-baby-pink-dark', bgColor: 'bg-baby-pink/30' },
+  { icon: Flower2, title: 'Gardening', desc: 'Nurturing life and watching it grow.', color: 'text-baby-green-dark', bgColor: 'bg-baby-green/30' },
+  { icon: Scissors, title: 'Sewing', desc: 'Crafting something unique by hand.', color: 'text-baby-yellow-dark', bgColor: 'bg-baby-yellow/30' },
 ];
 
 const MILESTONES_DATA = {
@@ -656,7 +1142,6 @@ const StaggeredText = ({ text, className = "" }: { text: string, className?: str
 
 const Home = () => {
   const [isBlogStoryExpanded, setIsBlogStoryExpanded] = React.useState(false);
-  const navigate = useNavigate();
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 100]);
   const y2 = useTransform(scrollY, [0, 500], [0, -50]);
@@ -882,28 +1367,29 @@ const Home = () => {
               <FadeInWhenVisible delay={i * 0.1} className="h-full">
                 <motion.div 
                   whileHover={{ y: -15, scale: 1.02 }}
-                  onClick={() => navigate(`/portfolio/${item.id}`)}
-                  className={`${item.color} rounded-[2.5rem] overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col`}
+                  className={`${item.color} rounded-[2.5rem] overflow-hidden group shadow-xl hover:shadow-2xl transition-all duration-500 h-full flex flex-col`}
                 >
-                  <div className="aspect-[16/10] overflow-hidden shrink-0">
-                    <motion.img 
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 1.2 }}
-                      src={item.img} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
-                      referrerPolicy="no-referrer" 
-                    />
-                  </div>
-                  <div className="p-8 flex justify-between items-start flex-1">
-                    <div className="flex-1 mr-4">
-                      <h3 className="font-bold text-2xl mb-1">{item.title}</h3>
-                      <p className="text-sm opacity-60 uppercase tracking-widest">{item.category}</p>
+                  <Link to={`/portfolio/${item.id}`} className="block h-full cursor-pointer">
+                    <div className="aspect-[16/10] overflow-hidden shrink-0">
+                      <motion.img 
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 1.2 }}
+                        src={item.img} 
+                        alt={item.title} 
+                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" 
+                        referrerPolicy="no-referrer" 
+                      />
                     </div>
-                    <div className="w-12 h-12 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white group-hover:rotate-45 transition-all duration-500 shrink-0">
-                      <ArrowUpRight size={20} />
+                    <div className="p-8 flex justify-between items-start flex-1">
+                      <div className="flex-1 mr-4">
+                        <h3 className="font-bold text-2xl mb-1">{item.title}</h3>
+                        <p className="text-sm opacity-60 uppercase tracking-widest">{item.category}</p>
+                      </div>
+                      <div className="w-12 h-12 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white group-hover:rotate-45 transition-all duration-500 shrink-0">
+                        <ArrowUpRight size={20} />
+                      </div>
                     </div>
-                  </div>
+                  </Link>
                 </motion.div>
               </FadeInWhenVisible>
             </div>
@@ -922,40 +1408,41 @@ const Home = () => {
             </Link>
           </div>
         </FadeInWhenVisible>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-stretch">
           {BLOG_POSTS.slice(0, 2).map((post, i) => (
-            <div key={i}>
-              <FadeInWhenVisible delay={i * 0.1}>
+            <div key={i} className="h-full">
+              <FadeInWhenVisible delay={i * 0.1} className="h-full">
                 <article 
-                  onClick={() => navigate(`/blog/${post.id}`)}
-                  className="group cursor-pointer border-b border-ink/10 pb-12 hover:border-ink/30 transition-all"
+                  className="group border-b border-ink/10 pb-12 hover:border-ink/30 transition-all h-full flex flex-col"
                 >
-                  {post.img && (
-                    <div className="mb-6 aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 bg-ink/5">
-                      <img 
-                        src={post.img} 
-                        alt={post.title} 
-                        className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
-                        referrerPolicy="no-referrer"
-                      />
+                  <Link to={`/blog/${post.id}`} className="flex flex-col h-full cursor-pointer">
+                    {post.img && (
+                      <div className="mb-6 aspect-[16/9] rounded-2xl overflow-hidden shadow-lg group-hover:shadow-2xl transition-all duration-500 bg-ink/5">
+                        <img 
+                          src={post.img} 
+                          alt={post.title} 
+                          className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700"
+                          referrerPolicy="no-referrer"
+                        />
+                      </div>
+                    )}
+                    <div className="flex items-center space-x-4 mb-6">
+                      <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${post.color.replace('text-', 'bg-')} text-ink`}>
+                        {post.category}
+                      </span>
+                      <span className="text-xs opacity-40 font-mono">{post.date}</span>
                     </div>
-                  )}
-                  <div className="flex items-center space-x-4 mb-6">
-                    <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${post.color.replace('text-', 'bg-')} text-ink`}>
-                      {post.category}
-                    </span>
-                    <span className="text-xs opacity-40 font-mono">{post.date}</span>
-                  </div>
-                  <h3 className="text-3xl font-bold mb-6 group-hover:translate-x-3 transition-transform duration-500 leading-tight">{post.title}</h3>
-                  <p className="text-lg opacity-70 leading-relaxed mb-8">{post.excerpt}</p>
-                  <div className="flex items-center space-x-3 font-bold text-sm group-hover:opacity-60 transition-opacity">
-                    <span>Read More</span>
-                    <motion.span 
-                      animate={{ x: [0, 5, 0] }}
-                      transition={{ repeat: Infinity, duration: 1.5 }}
-                      className="w-10 h-px bg-ink"
-                    ></motion.span>
-                  </div>
+                    <h3 className="text-3xl font-bold mb-6 group-hover:translate-x-3 transition-transform duration-500 leading-tight">{post.title}</h3>
+                    <p className="text-lg opacity-70 leading-relaxed mb-8">{post.excerpt}</p>
+                    <div className="mt-auto flex items-center space-x-3 font-bold text-sm group-hover:opacity-60 transition-opacity">
+                      <span>Read More</span>
+                      <motion.span 
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ repeat: Infinity, duration: 1.5 }}
+                        className="w-10 h-px bg-ink"
+                      ></motion.span>
+                    </div>
+                  </Link>
                 </article>
               </FadeInWhenVisible>
             </div>
@@ -980,17 +1467,18 @@ const Home = () => {
               <FadeInWhenVisible delay={i * 0.1}>
                 <motion.div 
                   whileHover={{ scale: 1.02, y: -5 }}
-                  onClick={() => navigate('/little-joys')}
-                  className={`${item.bgColor} p-12 rounded-[3rem] flex flex-col items-center text-center space-y-6 cursor-pointer shadow-xl hover:shadow-2xl transition-all duration-500`}
+                  className={`${item.bgColor} rounded-[3rem] overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500`}
                 >
-                  <motion.div
-                    whileHover={{ rotate: [0, -10, 10, 0] }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    <item.icon size={56} className={item.color} />
-                  </motion.div>
-                  <h3 className="font-bold text-3xl">{item.title}</h3>
-                  <p className="text-lg opacity-70 max-w-xs leading-relaxed">{item.desc}</p>
+                  <Link to="/little-joys" className="block p-12 flex flex-col items-center text-center space-y-6 cursor-pointer">
+                    <motion.div
+                      whileHover={{ rotate: [0, -10, 10, 0] }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <item.icon size={56} className={item.color} />
+                    </motion.div>
+                    <h3 className="font-bold text-3xl">{item.title}</h3>
+                    <p className="text-lg opacity-70 max-w-xs leading-relaxed">{item.desc}</p>
+                  </Link>
                 </motion.div>
               </FadeInWhenVisible>
             </div>
@@ -1015,12 +1503,13 @@ const Home = () => {
               <FadeInWhenVisible delay={i * 0.1}>
                 <motion.div 
                   whileHover={{ y: -10, scale: 1.02 }}
-                  onClick={() => navigate('/milestones')}
-                  className={`${item.color} p-8 rounded-[2rem] border border-ink/5 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-500`}
+                  className={`${item.color} rounded-[2rem] border border-ink/5 shadow-lg hover:shadow-xl transition-all duration-500 overflow-hidden`}
                 >
-                  <Trophy size={24} className="mb-6 opacity-40" />
-                  <h4 className="font-bold text-xl mb-2 leading-tight">{item.title}</h4>
-                  <p className="text-sm opacity-60 font-medium">{item.event} — {item.year}</p>
+                  <Link to="/milestones" className="block p-8 cursor-pointer">
+                    <Trophy size={24} className="mb-6 opacity-40" />
+                    <h4 className="font-bold text-xl mb-2 leading-tight">{item.title}</h4>
+                    <p className="text-sm opacity-60 font-medium">{item.event} — {item.year}</p>
+                  </Link>
                 </motion.div>
               </FadeInWhenVisible>
             </div>
@@ -1032,7 +1521,6 @@ const Home = () => {
 };
 
 const Portfolio = () => {
-  const navigate = useNavigate();
   return (
     <div className="space-y-12">
       <div className="flex justify-between items-end">
@@ -1044,21 +1532,22 @@ const Portfolio = () => {
           <motion.div 
             key={i}
             whileHover={{ y: -10 }}
-            onClick={() => navigate(`/portfolio/${item.id}`)}
-            className={`${item.color} rounded-3xl overflow-hidden group cursor-pointer shadow-lg`}
+            className={`${item.color} rounded-3xl overflow-hidden group shadow-lg`}
           >
-            <div className="aspect-video overflow-hidden">
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
-            </div>
-            <div className="p-6 flex justify-between items-center">
-              <div>
-                <h3 className="font-bold text-xl">{item.title}</h3>
-                <p className="text-sm opacity-60">{item.category}</p>
+            <Link to={`/portfolio/${item.id}`} className="block h-full cursor-pointer">
+              <div className="aspect-video overflow-hidden">
+                <img src={item.img} alt={item.title} className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" referrerPolicy="no-referrer" />
               </div>
-              <div className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white transition-colors">
-                <ArrowUpRight size={18} />
+              <div className="p-6 flex justify-between items-center">
+                <div>
+                  <h3 className="font-bold text-xl">{item.title}</h3>
+                  <p className="text-sm opacity-60">{item.category}</p>
+                </div>
+                <div className="w-10 h-10 rounded-full bg-white/50 flex items-center justify-center group-hover:bg-white transition-colors">
+                  <ArrowUpRight size={18} />
+                </div>
               </div>
-            </div>
+            </Link>
           </motion.div>
         ))}
       </div>
@@ -1116,7 +1605,6 @@ const PortfolioDetail = () => {
 };
 
 const Blog = () => {
-  const navigate = useNavigate();
   return (
     <div className="max-w-4xl mx-auto space-y-16">
       <div className="text-center space-y-4">
@@ -1127,37 +1615,38 @@ const Blog = () => {
         {BLOG_POSTS.map((post, i) => (
           <article 
             key={i} 
-            onClick={() => navigate(`/blog/${post.id}`)}
-            className="group cursor-pointer border-b border-ink/5 pb-12 hover:border-ink/20 transition-colors"
+            className="group border-b border-ink/5 pb-12 hover:border-ink/20 transition-colors"
           >
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="md:col-span-3">
-                <div className="flex items-center space-x-4 mb-4">
-                  <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${post.color.replace('text-', 'bg-')} text-ink`}>
-                    {post.category}
-                  </span>
-                  <span className="text-xs opacity-40">{post.date}</span>
-                </div>
-                <h3 className="text-3xl font-bold mb-4 group-hover:translate-x-2 transition-transform">{post.title}</h3>
-                <p className="text-lg opacity-70 leading-relaxed mb-6">{post.excerpt}</p>
-                <div className="flex items-center space-x-2 font-bold text-sm">
-                  <span>Read More</span>
-                  <span className="w-8 h-px bg-ink"></span>
-                </div>
-              </div>
-              {post.img && (
-                <div className="hidden md:block">
-                  <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-500 bg-ink/5">
-                    <img 
-                      src={post.img} 
-                      alt={post.title} 
-                      className="w-full h-full object-contain"
-                      referrerPolicy="no-referrer"
-                    />
+            <Link to={`/blog/${post.id}`} className="block cursor-pointer">
+              <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div className="md:col-span-3">
+                  <div className="flex items-center space-x-4 mb-4">
+                    <span className={`text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full ${post.color.replace('text-', 'bg-')} text-ink`}>
+                      {post.category}
+                    </span>
+                    <span className="text-xs opacity-40">{post.date}</span>
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4 group-hover:translate-x-2 transition-transform">{post.title}</h3>
+                  <p className="text-lg opacity-70 leading-relaxed mb-6">{post.excerpt}</p>
+                  <div className="flex items-center space-x-2 font-bold text-sm">
+                    <span>Read More</span>
+                    <span className="w-8 h-px bg-ink"></span>
                   </div>
                 </div>
-              )}
-            </div>
+                {post.img && (
+                  <div className="hidden md:block">
+                    <div className="aspect-square rounded-2xl overflow-hidden shadow-lg group-hover:scale-105 transition-transform duration-500 bg-ink/5">
+                      <img 
+                        src={post.img} 
+                        alt={post.title} 
+                        className="w-full h-full object-contain"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                  </div>
+                )}
+              </div>
+            </Link>
           </article>
         ))}
       </div>
@@ -1275,7 +1764,7 @@ const Milestones = () => (
       {/* Learning Paths */}
       <div className="space-y-6">
         <div className="flex items-center space-x-3 mb-8">
-          <GraduationCap className="text-baby-blue" size={32} />
+          <GraduationCap className="text-baby-blue-dark" size={32} />
           <h3 className="text-2xl font-bold uppercase tracking-widest">Learning Paths</h3>
         </div>
         {MILESTONES_DATA.learning.map((item, i) => (
@@ -1290,7 +1779,7 @@ const Milestones = () => (
       {/* Certifications */}
       <div className="space-y-6">
         <div className="flex items-center space-x-3 mb-8">
-          <Award className="text-baby-green" size={32} />
+          <Award className="text-baby-green-dark" size={32} />
           <h3 className="text-2xl font-bold uppercase tracking-widest">Certifications</h3>
         </div>
         {MILESTONES_DATA.certifications.map((item, i) => (
@@ -1307,7 +1796,7 @@ const Milestones = () => (
       {/* Awards */}
       <div className="space-y-6">
         <div className="flex items-center space-x-3 mb-8">
-          <Trophy className="text-baby-orange" size={32} />
+          <Trophy className="text-baby-orange-dark" size={32} />
           <h3 className="text-2xl font-bold uppercase tracking-widest">Awards</h3>
         </div>
         {MILESTONES_DATA.awards.map((item, i) => (
